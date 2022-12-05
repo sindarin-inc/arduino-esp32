@@ -9,18 +9,18 @@ set(min_supported_idf_version "4.4.0")
 set(max_supported_idf_version "4.4.99")
 set(idf_version "${IDF_VERSION_MAJOR}.${IDF_VERSION_MINOR}.${IDF_VERSION_PATCH}")
 
-if ("${idf_version}" AND NOT "$ENV{ARDUINO_SKIP_IDF_VERSION_CHECK}")
-  if (idf_version VERSION_LESS min_supported_idf_version)
-    message(FATAL_ERROR "Arduino-esp32 can be used with ESP-IDF versions "
-                        "between ${min_supported_idf_version} and ${max_supported_idf_version}, "
-                        "but an older version is detected: ${idf_version}.")
-  endif()
-  if (idf_version VERSION_GREATER max_supported_idf_version)
-    message(FATAL_ERROR "Arduino-esp32 can be used with ESP-IDF versions "
-                        "between ${min_supported_idf_version} and ${max_supported_idf_version}, "
-                        "but a newer version is detected: ${idf_version}.")
-  endif()
-endif()
+# if ("${idf_version}" AND NOT "$ENV{ARDUINO_SKIP_IDF_VERSION_CHECK}")
+#   if (idf_version VERSION_LESS min_supported_idf_version)
+#     message(FATAL_ERROR "Arduino-esp32 can be used with ESP-IDF versions "
+#                         "between ${min_supported_idf_version} and ${max_supported_idf_version}, "
+#                         "but an older version is detected: ${idf_version}.")
+#   endif()
+#   if (idf_version VERSION_GREATER max_supported_idf_version)
+#     message(FATAL_ERROR "Arduino-esp32 can be used with ESP-IDF versions "
+#                         "between ${min_supported_idf_version} and ${max_supported_idf_version}, "
+#                         "but a newer version is detected: ${idf_version}.")
+#   endif()
+# endif()
 
 set(CORE_SRCS
   cores/esp32/base64.cpp
@@ -202,8 +202,8 @@ set(includedirs
 
 set(srcs ${CORE_SRCS} ${LIBRARY_SRCS} ${BLE_SRCS})
 set(priv_includes cores/esp32/libb64)
-set(requires spi_flash mbedtls mdns esp_adc_cal wifi_provisioning nghttp wpa_supplicant)
-set(priv_requires fatfs nvs_flash app_update spiffs bootloader_support openssl bt esp_ipc esp_hid)
+set(requires spi_flash mbedtls mdns esp_adc wifi_provisioning nghttp wpa_supplicant esp_psram)
+set(priv_requires fatfs nvs_flash app_update spiffs bootloader_support bt esp_hid)
 
 idf_component_register(INCLUDE_DIRS ${includedirs} PRIV_INCLUDE_DIRS ${priv_includes} SRCS ${srcs} REQUIRES ${requires} PRIV_REQUIRES ${priv_requires})
 

@@ -21,12 +21,12 @@
 #include "esp_system.h"
 #ifdef ESP_IDF_VERSION_MAJOR // IDF 4+
 #if CONFIG_IDF_TARGET_ESP32 // ESP32/PICO-D4
-#include "esp32/spiram.h"
+#include "esp_psram.h"
 #elif CONFIG_IDF_TARGET_ESP32S2
-#include "esp32s2/spiram.h"
+#include "esp_psram.h"
 #include "esp32s2/rom/cache.h"
 #elif CONFIG_IDF_TARGET_ESP32S3
-#include "esp32s3/spiram.h"
+#include "esp_psram.h"
 #include "esp32s3/rom/cache.h"
 #else 
 #error Target CONFIG_IDF_TARGET is not supported

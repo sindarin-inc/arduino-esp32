@@ -19,3 +19,8 @@ files:
     - "Kconfig.projbuild"
   exclude:
     - "**/*"
+
+dependencies:
+  espressif/nghttp: "*"
+  espressif/mdns: "*"
+  # espressif/esp_adc_cal: "*"

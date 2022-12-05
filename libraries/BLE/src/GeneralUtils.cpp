@@ -19,6 +19,7 @@
 #include <esp_heap_caps.h>
 #include <esp_system.h>
 #include "esp32-hal-log.h"
+#include <esp_chip_info.h>
 
 static const char kBase64Alphabet[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	"abcdefghijklmnopqrstuvwxyz"
