@@ -84,8 +84,6 @@ set(LIBRARY_SRCS
   libraries/FFat/src/FFat.cpp
   libraries/FS/src/FS.cpp
   libraries/FS/src/vfs_api.cpp
-  libraries/HTTPClient/src/HTTPClient.cpp
-  libraries/HTTPUpdate/src/HTTPUpdate.cpp
   libraries/LittleFS/src/LittleFS.cpp
   libraries/I2S/src/I2S.cpp
   libraries/NetBIOS/src/NetBIOS.cpp
@@ -116,9 +114,9 @@ set(LIBRARY_SRCS
   libraries/WebServer/src/WebServer.cpp
   libraries/WebServer/src/Parsing.cpp
   libraries/WebServer/src/detail/mimetable.cpp
-  libraries/WiFiClientSecure/src/ssl_client.cpp
-  libraries/WiFiClientSecure/src/esp_crt_bundle.c
-  libraries/WiFiClientSecure/src/WiFiClientSecure.cpp
+  # libraries/WiFiClientSecure/src/ssl_client.cpp
+  # libraries/WiFiClientSecure/src/esp_crt_bundle.c
+  # libraries/WiFiClientSecure/src/WiFiClientSecure.cpp
   libraries/WiFi/src/WiFiAP.cpp
   libraries/WiFi/src/WiFiClient.cpp
   libraries/WiFi/src/WiFi.cpp
@@ -178,8 +176,6 @@ set(includedirs
   libraries/Ethernet/src
   libraries/FFat/src
   libraries/FS/src
-  libraries/HTTPClient/src
-  libraries/HTTPUpdate/src
   libraries/LittleFS/src
   libraries/I2S/src
   libraries/NetBIOS/src
@@ -194,7 +190,6 @@ set(includedirs
   libraries/Update/src
   libraries/USB/src
   libraries/WebServer/src
-  libraries/WiFiClientSecure/src
   libraries/WiFi/src
   libraries/WiFiProv/src
   libraries/Wire/src
